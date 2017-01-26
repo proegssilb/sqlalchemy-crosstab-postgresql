@@ -1,3 +1,2 @@
---index-url https://pypi.python.org/simple/
-
--e .
+sqlalchemy>=1.0
+pytest>=3.0
