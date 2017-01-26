@@ -24,4 +24,4 @@ python:
 install: "pip install -r requirements.txt"
 script: pytest
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create database travis_ci_test;\c travis_ci_test;CREATE EXTENSION tablefunc' -U postgres
