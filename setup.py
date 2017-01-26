@@ -19,6 +19,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'sqlalchemy',
-        'pytest'
+        'pytest',
+        'psycopg2'
     ],
 )
