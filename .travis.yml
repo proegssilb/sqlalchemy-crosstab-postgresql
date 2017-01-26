@@ -1,0 +1,27 @@
+language: python
+matrix:
+  include:
+    - addons:
+        postgresql: 9.2
+    - addons:
+        postgresql: 9.3
+    - addons:
+        postgresql: 9.4
+    - addons:
+        postgresql: 9.5
+    - addons:
+        postgresql: 9.6
+services:
+  - postgresql
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+install: "pip install -r requirements.txt"
+script: pytest
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
