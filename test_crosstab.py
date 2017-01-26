@@ -387,7 +387,7 @@ def test_ormReturnSome(ormCensus, pgsession):
 
 
 @pytest.mark.usefixtures("ormCensusData")
-def test_ormReturnSome(ormCensus, pgsession):
+def test_ormReturnAggregate(ormCensus, pgsession):
     """Test that you can combine crosstab with ORM Queries."""
     # Define the input table
     crosstab_input = pgsession.query(
