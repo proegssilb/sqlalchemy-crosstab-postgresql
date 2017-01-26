@@ -1,20 +1,9 @@
 language: python
-env:
-  - PGVER=9.2
-  - PGVER=9.3
-  - PGVER=9.4
-  - PGVER=9.5
-  - PGVER=9.6
-addons:
-    postgresql: $PGVER
 services:
   - postgresql
 python:
-  - "2.6"
   - "2.7"
   - "3.3"
-  - "3.4"
-  - "3.5"
   - "3.6"
 install: "pip install -r requirements.txt"
 script: pytest
