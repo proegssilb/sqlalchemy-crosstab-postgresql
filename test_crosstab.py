@@ -254,7 +254,7 @@ def test_breaksOnSqlite(sqliteEngine):
     q = select(['*']).select_from(crosstab(crosstab_input, ret_types,
                                            categories=categories))
 
-    with pytest.raises(CompileError):
+    with pytest.raises(Exception):
         sqliteEngine.execute(q)
 
     raw.drop()
