@@ -15,7 +15,7 @@ from crosstab import crosstab
 def pgengine(request):
     """Create a sqlalchemy engine for a PostgreSQL DB."""
     envFile = request.param
-    if envFile != '' and envFile is not None:
+    if os.environ.get('DBCONNECTION', None) is None:
         with open(envFile) as envVars:
             for line in envVars:
                 var, val = line.split('=', 1)
