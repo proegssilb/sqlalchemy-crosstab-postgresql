@@ -11,6 +11,10 @@ class crosstab(FromClause):
         self.columns = return_def if isinstance(return_def, (list, tuple)) \
             else return_def.columns
         self.categories = categories
+        if hasattr(return_def, 'name'):
+            self.name = return_def.name
+        else:
+            self.name = None
 
         if isinstance(self.stmt, Query):
             self.stmt = self.stmt.selectable
